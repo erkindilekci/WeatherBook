@@ -23,7 +23,8 @@ fun HourlyWeatherDisplay(
     modifier: Modifier = Modifier,
     textColor: Color = Color.White
 ) {
-    val formattedTime = remember(weatherData) { weatherData.time.format(DateTimeFormatter.ofPattern("HH:mm")) }
+    val formattedTime =
+        remember(weatherData) { weatherData.time.format(DateTimeFormatter.ofPattern("HH:mm")) }
 
     Column(
         modifier = modifier,
@@ -32,8 +33,14 @@ fun HourlyWeatherDisplay(
     ) {
         Text(text = formattedTime, color = textColor)
 
-        Image(painter = painterResource(id = weatherData.weatherType.iconRes), contentDescription = null, modifier = Modifier.width(50.dp).height(50.dp))
-        
+        Image(
+            painter = painterResource(id = weatherData.weatherType.iconRes),
+            contentDescription = null,
+            modifier = Modifier
+                .width(50.dp)
+                .height(50.dp)
+        )
+
         Text(
             text = "${weatherData.temperatureCelsius}°C",
             color = textColor,

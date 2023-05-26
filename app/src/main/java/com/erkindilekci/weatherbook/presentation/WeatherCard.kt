@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -41,7 +40,9 @@ fun WeatherCard(
         Card(
             backgroundColor = backgroundColor,
             shape = RoundedCornerShape(20.dp),
-            modifier = modifier.padding(16.dp).scrollable(scrollState, Orientation.Vertical)
+            modifier = modifier
+                .padding(16.dp)
+                .scrollable(scrollState, Orientation.Vertical)
         ) {
             Column(
                 modifier = Modifier
@@ -64,7 +65,9 @@ fun WeatherCard(
                 Image(
                     painter = painterResource(id = data.weatherType.iconRes),
                     contentDescription = null,
-                    modifier = Modifier.width(200.dp).height(200.dp)
+                    modifier = Modifier
+                        .width(200.dp)
+                        .height(200.dp)
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
